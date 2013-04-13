@@ -13,7 +13,13 @@ Atakum::Application.routes.draw do
   match "contact" => "home#contact"
   match "/admin" => "admin#index"
   match "institute" => "institute#index"
+
   match "user" => "user#index"
+  namespace :user do
+    get "login"
+    post "sign_in"
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
