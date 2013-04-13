@@ -1,4 +1,6 @@
 Atakum::Application.routes.draw do
+  get "user/index"
+
   get "admin/index"
 
   get "institute/index"
