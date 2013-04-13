@@ -1,4 +1,6 @@
 Atakum::Application.routes.draw do
+  get "institute/index"
+
   #get "home/index"
   root :to => 'home#index'
 
