@@ -1,4 +1,10 @@
 class UserController < ApplicationController
+  before_filter :require_login, :except => [:login, :sign_in, :logout, :google_create]
+
+  def require_login
+    redirect_to '/user/login' unless session[:user]
+  end
+
   def index
   end
 

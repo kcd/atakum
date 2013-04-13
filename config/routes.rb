@@ -18,6 +18,7 @@ Atakum::Application.routes.draw do
   namespace :user do
     get "login"
     post "sign_in"
+    get "header"
   end
 
 
