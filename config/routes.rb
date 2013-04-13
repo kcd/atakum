@@ -11,6 +11,10 @@ Atakum::Application.routes.draw do
   match "home" => "home#index"
   match "about" => "home#about"
   match "contact" => "home#contact"
+  match "/admin" => "admin#index"
+  match "institute" => "institute#index"
+  match "user" => "user#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
