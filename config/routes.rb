@@ -16,9 +16,8 @@ Atakum::Application.routes.draw do
 
   match "user" => "user#index"
   namespace :user do
-    get "login"
-    post "sign_in"
-    get "header"
+   get "login"
+   post "sign_in"
   end
 
 

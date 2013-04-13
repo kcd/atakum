@@ -26,7 +26,6 @@
           <ul class="nav pull-right">
             <% if session[:admin] %>
               <li><a href="/admin">Komisyon</a></li>
-              <li><a href="/admin/support">Yardım</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= session[:admininfo][:email] %><b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -36,7 +35,6 @@
               </ul>
               </li>
             <% elsif session[:institute] %>
-              <li><a href="/institute/support">Yardım</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= session[:instituteinfo][:email] %><b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -46,7 +44,6 @@
               </ul>
               </li>
             <% elsif session[:user] %>
-              <li><a href="/user/support">Yardım</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= session[:userinfo][:email] %><b class="caret"></b></a>
               <ul class="dropdown-menu">
