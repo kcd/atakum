@@ -8,7 +8,7 @@ class Student < ActiveRecord::Base
 
   has_secure_password
 
-  attr_accessible :tc, :first_name, :last_name, :email, :password, :phone_number, :gender, :birthday, :address, :city_id, :district_id, :subscriber
+  attr_accessible :tc, :first_name, :last_name, :email, :password, :phone_number, :gender, :birthday, :address, :city_id, :district_id
   validates_presence_of :email, :tc, :first_name, :last_name
   validates_uniqueness_of :email, :tc
 

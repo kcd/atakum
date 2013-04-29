@@ -1,91 +1,96 @@
 Atakum::Application.routes.draw do
-  get "home/index"
 
-  get "user/index"
-
-  get "admin/index"
-
-  get "institute/index"
-  get  'home/register'
-  post 'home/register_save'
-  get  "dynamic_districts/:id" => "user#dynamic_districts"
-
-  #get "home/index"
   root :to => 'home#index'
+
+  match "/auth/:provider/callback" => "admin#google_create"
 
   match "home" => "home#index"
   match "about" => "home#about"
   match "contact" => "home#contact"
+
+  get  'home/register'
+  post 'home/register_save'
+  get  'home/donations'
+  get  'home/institutes'
+
+  get  'home/institute_register'
+  post 'home/institute_register_save'
+
+  get  "dynamic_districts/:id" => "home#dynamic_districts"
+
   match "/admin" => "admin#index"
-  match "institute" => "institute#index"
+  get  'admin/login'
+  get  'admin/logout'
+  post 'admin/sign_in'
+
+  namespace :admin do
+    get  'support'
+    get  'personal'
+    post 'personal_save'
+    get  'statistic'
+
+    resources :roles do
+      get :destroy
+      get :confirm
+    end
+    post "roles/update"
+
+    resources :donors do
+      get :destroy
+      get :confirm
+    end
+
+    resources :institutes do
+      get :destroy
+      get :confirm
+    end
+
+    resources :donorrequests do
+      get :destroy
+      get :confirm
+    end
+
+    resources :bloodmakings do
+      get :destroy
+      get :confirm
+    end
+
+    resources :admins do
+      get :destroy
+    end
+    post "admins/update"
+
+  end
+
 
   match "user" => "user#index"
   namespace :user do
     get   "logout"
     get   "login"
     post  "sign_in"
-    get	  "sign_up"
-    post  "sign_up_ok"
-    get   "password"
-    post  "password_ok"
-    get   "support"
+    get   'personal'
+    post  'personal_save'
+    get   'password'
+    post  'password_save'
+    get   'support'
   end
 
+  match "institute" => "institute#index"
+  match "institute/donor/:id" => "institute#donor"
+  namespace :institute do
+    get   "logout"
+    get   "login"
+    post  "sign_in"
+    get   'personal'
+    post  'personal_save'
+    get   'password'
+    post  'password_save'
+    get   'query'
+    post  'update'
+    post  'bloodmaking'
+    get   'support'
+    get   'querypdf'
+  end
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end
+
