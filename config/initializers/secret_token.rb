@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Atakum::Application.config.secret_token = 'a5e9ae7fe9ca4e3679277224aff52575e12e4b72890718b44b957cd594f04da963c7f6b0223d6f2810cca913b8a01b116c7d81eda3abf5594661953e143361c5'
+Atakum::Application.config.secret_token = '280a0e15610bb896b63a489da34374e0bfc93a3f7fba1565f822efe94ad8047dcbe2d284f1ba36d758b74d30d164dc45cd48a9a9d6564744705d8a01297196fa'

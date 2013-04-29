@@ -1,7 +1,6 @@
 class City < ActiveRecord::Base
-  # attr_accessible :title, :body
-  has_one  :student
-  has_one  :institute
+  has_one  :dealer
+  has_many  :user
 
   def self.get_name id
     if id
@@ -9,4 +8,5 @@ class City < ActiveRecord::Base
       city[:city] if city
     end
   end
+
 end

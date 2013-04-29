@@ -1,9 +1,14 @@
 Atakum::Application.routes.draw do
+  get "home/index"
+
   get "user/index"
 
   get "admin/index"
 
   get "institute/index"
+  get  'home/register'
+  post 'home/register_save'
+  get  "dynamic_districts/:id" => "user#dynamic_districts"
 
   #get "home/index"
   root :to => 'home#index'
@@ -16,8 +21,14 @@ Atakum::Application.routes.draw do
 
   match "user" => "user#index"
   namespace :user do
-   get "login"
-   post "sign_in"
+    get   "logout"
+    get   "login"
+    post  "sign_in"
+    get	  "sign_up"
+    post  "sign_up_ok"
+    get   "password"
+    post  "password_ok"
+    get   "support"
   end
 
 

@@ -11,57 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414084443) do
-
-  create_table "admins", :force => true do |t|
-    t.string   "first_name",                  :null => false
-    t.string   "last_name",                   :null => false
-    t.string   "email",                       :null => false
-    t.string   "password",                    :null => false
-    t.string   "image"
-    t.string   "phone_number"
-    t.integer  "status",       :default => 2
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
-  end
-
-  create_table "institutes", :force => true do |t|
-    t.string   "name",                        :null => false
-    t.string   "email",                       :null => false
-    t.string   "password",                    :null => false
-    t.string   "phone_number"
-    t.string   "image"
-    t.integer  "status",       :default => 2
-    t.integer  "role_id",                     :null => false
-    t.integer  "city_id",                     :null => false
-    t.integer  "district_id",                 :null => false
-    t.string   "address"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
-  end
-
-  create_table "roles", :force => true do |t|
-    t.string   "name",       :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130429171639) do
 
   create_table "students", :force => true do |t|
-    t.integer  "tc",              :limit => 8,                :null => false
-    t.string   "first_name",                                  :null => false
-    t.string   "last_name",                                   :null => false
-    t.string   "email",                                       :null => false
-    t.string   "phone_number",                                :null => false
+    t.integer  "tc",              :limit => 8, :null => false
+    t.string   "first_name",                   :null => false
+    t.string   "last_name",                    :null => false
+    t.string   "email",                        :null => false
+    t.string   "password_digest",              :null => false
+    t.string   "phone_number",                 :null => false
     t.string   "image"
-    t.string   "gender",                                      :null => false
-    t.date     "birthday",                                    :null => false
-    t.integer  "status",                       :default => 2
-    t.integer  "city_id",                                     :null => false
-    t.integer  "district_id",                                 :null => false
+    t.string   "gender",                       :null => false
+    t.date     "birthday",                     :null => false
     t.string   "address"
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
-    t.string   "password_digest"
+    t.integer  "city_id",                      :null => false
+    t.integer  "district_id",                  :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
 end
