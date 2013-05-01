@@ -1,5 +1,9 @@
 Atakum::Application.routes.draw do
 
+  get "admin/index"
+
+  get "institute/index"
+
   root :to => 'home#index'
 
   match "/auth/:provider/callback" => "admin#google_create"
