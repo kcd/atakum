@@ -1,6 +1,7 @@
 class District < ActiveRecord::Base
-  has_one  :dealers
+  has_one  :students
   has_one  :users
+  has_one :institute
 
   def self.get_name id
     if id
