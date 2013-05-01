@@ -1,9 +1,13 @@
 Rails uygulasını çalıştırmak için aşağıdaki adımları uygulayın:
 
 $ git clone git@github.com:kcd/atakum.git
+
 $ cd atakum
+
 $ bundle install --without production
+
 $ rake db:migrate
+
 $ rake db:seed
 
 Daha sonra tarayıcınıza http://0.0.0.0:3000/ yazıp görüntüleyebilirsiniz.
