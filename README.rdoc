@@ -6,6 +6,8 @@ $ cd atakum
 
 $ bundle install --without production
 
+$ mkdb staj staj
+
 $ rake db:migrate
 
 $ rake db:seed
