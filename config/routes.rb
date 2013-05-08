@@ -20,7 +20,6 @@ Atakum::Application.routes.draw do
 
   get  'home/register'
   post 'home/register_save'
-  get  'home/donations'
     
   get  'home/institute_register'
   post 'home/institute_register_save'
@@ -49,16 +48,6 @@ Atakum::Application.routes.draw do
     end
 
     resources :institutes do
-      get :destroy
-      get :confirm
-    end
-
-    resources :donorrequests do
-      get :destroy
-      get :confirm
-    end
-
-    resources :bloodmakings do
       get :destroy
       get :confirm
     end
@@ -96,7 +85,6 @@ Atakum::Application.routes.draw do
     post  'password_save'
     get   'query'
     post  'update'
-    post  'bloodmaking'
     get   'support'
     get   'querypdf'
   end
