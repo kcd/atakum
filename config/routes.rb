@@ -53,16 +53,6 @@ Atakum::Application.routes.draw do
       get :confirm
     end
 
-    resources :donorrequests do
-      get :destroy
-      get :confirm
-    end
-
-    resources :bloodmakings do
-      get :destroy
-      get :confirm
-    end
-
     resources :admins do
       get :destroy
     end
