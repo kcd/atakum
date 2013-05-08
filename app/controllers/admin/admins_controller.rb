@@ -82,7 +82,7 @@ class Admin::AdminsController < ApplicationController
   def export
     # foo = {
     #   'admins' => 'Admin',
-    #   'donors' => 'Donor',
+    #   'students' => 'Student',
     #   'institutes' => 'Institute',
     #   'roles' => 'Role',
     # }
