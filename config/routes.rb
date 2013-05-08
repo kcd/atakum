@@ -42,7 +42,7 @@ Atakum::Application.routes.draw do
     end
     post "roles/update"
 
-    resources :donors do
+    resources :students do
       get :destroy
       get :confirm
     end
