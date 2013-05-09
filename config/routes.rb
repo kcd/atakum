@@ -23,7 +23,7 @@ Atakum::Application.routes.draw do
   get  'home/register'
   post 'home/register_save'
   
- get   'home/pro_adv'
+  get   'home/pro_adv'
 
   get  'home/institute_register'
   post 'home/institute_register_save'
