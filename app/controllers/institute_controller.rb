@@ -2,7 +2,7 @@
 
 class InstituteController < ApplicationController
 
-  #include ImageHelper
+  include ImageHelper
   #include PdfHelper
 
   before_filter :require_login, :except => [:login, :sign_in, :logout, :google_create]
@@ -80,6 +80,20 @@ class InstituteController < ApplicationController
     end
 
     redirect_to '/institute/password'
+  end
+  def request_save
+    institute_request = InstituteRequest.new({
+      :institute_id => session[:instituteinfo][:id],
+      :probation_advert_id => params[:probation_advert_id],
+      :content => params[:content],
+    })
+
+    if institute_request.save
+      flash[:notice] = "İsteğiniz Sistem Yöneticilerine Ulaştırıldı. Teşekkür Ederiz"
+    else
+      flash[:error] = "İstek Gönderilemedi"
+    end
+    redirect_to '/institute/request'
   end
 end
 
