@@ -95,5 +95,24 @@ class UserController < ApplicationController
 
     @student_files = StudentFile.where(student_id: session[:userinfo].id)
   end
+  def location
+  end
+
+  def location_save
+      probation_location = ProbationLocation.new({
+      :student_no => params[:student_no],
+      :probation_type => params[:probation_type],
+      :institute_name => params[:institute_name],
+      :start_date => params[:start_date],
+      :finish_date => params[:finish_date],
+    })
+
+    if probation_location.save
+      flash[:notice] = "Bilgileriniz Sistem Yöneticilerine Ulaştırıldı. Teşekkür Ederiz"
+    else
+      flash[:error] = "İstek Gönderilemedi"
+    end
+    redirect_to '/user/location'
+  end
 
 end

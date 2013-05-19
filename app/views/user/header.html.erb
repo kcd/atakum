@@ -15,6 +15,10 @@
     <li class="<%= "active" if request[:action] == 'files' %>">
     <a href="/<%= request[:controller] %>/files"><i class="icon-file"></i> <span>Dosyalar</span></a>
     </li>
+    <li class="<%= "active" if request[:action] == 'location' %>">
+    <a href="/<%= request[:controller] %>/location"><i class="icon-pencil"></i> <span>Staj Yeri Bilgisi</span></a>
+    </li>
+
   </ul>
 <% end %>
 

@@ -1,5 +1,7 @@
 Atakum::Application.routes.draw do
 
+  get "probationlocations/index"
+
   get "instituterequests/index"
 
   get "students/index"
@@ -62,6 +64,11 @@ Atakum::Application.routes.draw do
     end
     post "instituterequests/update"
 
+    resources :probationlocations do
+      get :destroy
+      get :confirm
+    end
+
     resources :admins do
       get :destroy
     end
@@ -84,6 +91,8 @@ Atakum::Application.routes.draw do
     get   'institutes'
     get   'files'
     post  'files'
+    get   'location'
+    post  'location_save'
   end
 
   match "institute" => "institute#index"
