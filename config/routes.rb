@@ -24,17 +24,20 @@ Atakum::Application.routes.draw do
 
   get  'home/register'
   post 'home/register_save'
-  
+
   get   'home/pro_adv'
   get   'home/pro_doc'
   get  'home/institute_register'
   post 'home/institute_register_save'
   get  "dynamic_districts/:id" => "home#dynamic_districts"
 
+
+  get 'login' => "home#login"
+  post 'login' => "home#login"
+  get  "logout" => "home#logout"
+
+
   match "/admin" => "admin#index"
-  get  'admin/login'
-  get  'admin/logout'
-  post 'admin/sign_in'
 
   namespace :admin do
     get  'support'
@@ -52,7 +55,7 @@ Atakum::Application.routes.draw do
       get :destroy
       get :confirm
     end
-    
+
     resources :instituterequests do
       get :destroy
       get :confirm
@@ -73,23 +76,19 @@ Atakum::Application.routes.draw do
 
   match "user" => "user#index"
   namespace :user do
-    get   "logout"
-    get   "login"
-    post  "sign_in"
     get   'personal'
     post  'personal_save'
     get   'password'
     post  'password_save'
     get   'support'
     get   'institutes'
+    get   'files'
+    post  'files'
   end
 
   match "institute" => "institute#index"
   match "institute/student/:id" => "institute#student"
   namespace :institute do
-    get   "logout"
-    get   "login"
-    post  "sign_in"
     get   'personal'
     post  'personal_save'
     get   'password'
