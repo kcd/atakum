@@ -68,6 +68,7 @@ Atakum::Application.routes.draw do
       get :destroy
       get :confirm
     end
+    post "probationlocations/update"
 
     resources :admins do
       get :destroy

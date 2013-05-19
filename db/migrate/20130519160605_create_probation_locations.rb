@@ -6,6 +6,7 @@ class CreateProbationLocations < ActiveRecord::Migration
       t.string :institute_name, :null => false
       t.date   :start_date
       t.date   :finish_date
+      t.integer :status, :default => 2
 
       t.timestamps
     end
