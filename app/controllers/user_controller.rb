@@ -95,6 +95,7 @@ class UserController < ApplicationController
 
     @student_files = StudentFile.where(student_id: session[:userinfo].id)
   end
+<<<<<<< HEAD
   def location
   end
 
@@ -114,5 +115,7 @@ class UserController < ApplicationController
     end
     redirect_to '/user/location'
   end
+=======
+>>>>>>> 5a2ea58ba920164757263826d893cb3c4ddb08f8
 
 end

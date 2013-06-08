@@ -7,10 +7,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: staj
+  database: test
   pool: 5
-  username: staj
-  password: staj
+  username: test
+  password: test
   socket: /var/run/mysqld/mysqld.sock
   #adapter: sqlite3
   #database: db/development.sqlite3
