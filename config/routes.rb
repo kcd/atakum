@@ -27,6 +27,7 @@ Atakum::Application.routes.draw do
   get 'login' => "home#login"
   post 'login' => "home#login"
   get  "logout" => "home#logout"
+  
   match "/auth/:provider/callback" => "home#google_create"
 
   match "/admin" => "admin#index"
