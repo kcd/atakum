@@ -1,8 +1,8 @@
 Rails uygulasını çalıştırmak için aşağıdaki adımları uygulayın:
 
-- Repo bilgisayara clonlanır. 
+- Depo bilgisayara clonlanır. 
 
-$ git clone git@github.com:kcd/atakum.git 
+	$ git clone git@github.com:kcd/atakum.git 
 
 - 'atakum' dizinine gidilir.
 
