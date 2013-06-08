@@ -2,6 +2,8 @@
 
 class HomeController < ApplicationController
 
+  include ImageHelper
+  
   def index
   end
 
